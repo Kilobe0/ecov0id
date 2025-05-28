@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b82h3g0icgqtf"]
+
+[ext_resource type="PackedScene" uid="uid://dch8claey6wmr" path="res://assets/models/Player/Model/characterMedium.fbx" id="1_jmq5u"]
+
+[node name="characterMedium" instance=ExtResource("1_jmq5u")]
+
+[node name="characterMedium" parent="Root/Skeleton3D" index="0"]
+layers = 2

@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://kjxjffo1w528" path="res://audio_segment.mp3" id="1_d5x1h"]
 [ext_resource type="Material" uid="uid://c0dihndvf23e1" path="res://star_sky.tres" id="1_hq1ik"]
 [ext_resource type="Script" uid="uid://5kgqgmmnyxos" path="res://textbox.gd" id="3_gyfs4"]
-[ext_resource type="PackedScene" uid="uid://dch8claey6wmr" path="res://assets/models/Player/Model/characterMedium.fbx" id="4_nfk4m"]
+[ext_resource type="PackedScene" uid="uid://b82h3g0icgqtf" path="res://PlayerModel.tscn" id="4_8mm7a"]
 
 [sub_resource type="Sky" id="Sky_66tet"]
 sky_material = ExtResource("1_hq1ik")
@@ -26,6 +26,7 @@ size = Vector3(20, 0.01, 20)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.22651, 0)
+layers = 3
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d5x1h")
@@ -46,15 +47,15 @@ script = ExtResource("1_2c62f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00126886, 2.12897, 0.00250643)
 shape = SubResource("CapsuleShape3D_d5x1h")
 
-[node name="characterMedium" parent="CharacterBody3D" instance=ExtResource("4_nfk4m")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
 [node name="Head" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.4, 0.3)
+cull_mask = 1047553
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+
+[node name="characterMedium" parent="CharacterBody3D" instance=ExtResource("4_8mm7a")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("3_gyfs4")
